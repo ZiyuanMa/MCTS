@@ -11,7 +11,7 @@ const float c_p = 1 / sqrt(2); // UCT exploration constant
 template <class Game>
 class Node {
 public:
-    Node(Node *parent_node, Game state) : parent(parent_node), current_state(state) {}
+    Node(Node *parent_node, Game &state) : parent(parent_node), current_state(state) {}
 
     ~Node() {
         for (const std::pair<int, Node*> &child : this->children) {
